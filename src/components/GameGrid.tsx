@@ -1,3 +1,4 @@
+import { error } from "console";
 import GameCards from "./GameCards";
 import useGames from "./hooks/useGames";
 

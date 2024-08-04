@@ -3,14 +3,18 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import PlatformIconLists from "./PlatformIconLists";
+
 interface GameCardProps {
   game: Game;
 }
 const GameCards = ({ game }: GameCardProps) => {
+  const p = game.parent_platforms.map(({ platform }) => platform);
+  console.log(p);
+
   return (
     <div className="col-span-1">
       <Card className="flex flex-col overflow-hidden ">
@@ -22,8 +26,14 @@ const GameCards = ({ game }: GameCardProps) => {
             {/* <img src={game.background_image} /> */}
           </CardDescription>
         </CardHeader>
-        <CardContent className="mt-auto">
-          <p className="text-xl text-nowrap"> {game.name} </p>
+        <CardContent className="mt-auto my-2 space-y-4">
+          <p className="text-xl text-gray-700 dark:text-gray-300 text-nowrap font-bold">
+            {game.name}
+          </p>
+
+          <PlatformIconLists
+            platforms={game.parent_platforms.map(({ platform }) => platform)}
+          />
         </CardContent>
         {/* <CardFooter>
           <p>Card Footer</p>
