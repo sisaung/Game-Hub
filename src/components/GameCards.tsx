@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/card";
 import PlatformIconLists from "./PlatformIconLists";
 import CriticScore from "./CriticScore";
+import getCroppedImageUrl from "@/services/image-url";
 
 interface GameCardProps {
   game: Game;
@@ -21,7 +22,7 @@ const GameCards = ({ game }: GameCardProps) => {
       <Card className="flex flex-col overflow-hidden ">
         <CardHeader>
           <CardTitle className="w-full p-0 overflow-hidden">
-            <img src={game.background_image} />
+            <img src={getCroppedImageUrl(game.background_image)} />
           </CardTitle>
           <CardDescription>
             {/* <img src={game.background_image} /> */}
