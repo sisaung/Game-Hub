@@ -1,4 +1,5 @@
 import GameGrid from "./components/GameGrid";
+import GenresLists from "./components/GenresLists";
 import Navbar from "./components/Navbar";
 
 const App = () => {
@@ -7,7 +8,9 @@ const App = () => {
       {/* <Test /> */}
       <Navbar />
       <div className="flex ">
-        <div className="hidden lg:w-1/3 lg:flex "> aside </div>
+        <div className="hidden lg:w-1/3 lg:flex ">
+          <GenresLists />
+        </div>
         <GameGrid />
       </div>
     </div>
