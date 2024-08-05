@@ -31,7 +31,7 @@ const GenresLists = ({ onSelectGenre, selectedGenre }: Props) => {
           />
           <button
             onClick={() => onSelectGenre(genre)}
-            className={`text-lg hover:underline ${
+            className={`text-sm xl:text-lg text-nowrap hover:underline ${
               selectedGenre?.id === genre.id && "font-bold text-purple-400"
             } `}
           >

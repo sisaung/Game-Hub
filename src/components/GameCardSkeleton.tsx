@@ -3,7 +3,6 @@ import {
   CardContent,
   CardDescription,
   CardHeader,
-  CardTitle,
 } from "@/components/ui/card";
 import { Skeleton } from "./ui/skeleton";
 
@@ -14,7 +13,7 @@ const GameCardSkeleton = () => {
         <Card className="flex flex-col overflow-hidden ">
           <CardHeader>
             <div className="w-full p-0 overflow-hidden">
-              <Skeleton className="w-full h-[200px]"> </Skeleton>
+              <Skeleton className="w-[500px] h-[200px]"> </Skeleton>
             </div>
             <CardDescription></CardDescription>
           </CardHeader>
