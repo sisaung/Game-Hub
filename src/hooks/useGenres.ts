@@ -6,11 +6,7 @@ import useData from "./useData";
 export interface Genre {
   id: number;
   name: string;
-}
-
-interface fetchGenresResponse {
-  count: number;
-  results: Genre[];
+  image_background: string;
 }
 
 const useGenres = () => useData<Genre>("/genres");

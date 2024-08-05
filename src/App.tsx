@@ -4,11 +4,11 @@ import Navbar from "./components/Navbar";
 
 const App = () => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen p-0 lg:p-5 gap-5 ">
       {/* <Test /> */}
       <Navbar />
       <div className="flex ">
-        <div className="hidden lg:w-1/3 lg:flex ">
+        <div className="hidden lg:w-1/3 lg:flex">
           <GenresLists />
         </div>
         <GameGrid />

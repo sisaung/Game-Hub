@@ -3,7 +3,7 @@ import { ModeToggle } from "./mode-toggle";
 
 const Navbar = () => {
   return (
-    <nav className="flex flex-col p-5">
+    <nav className="flex flex-col p-5 lg:p-0 ">
       <div className="flex justify-between items-center ">
         <div className="flex gap-3 items-center">
           <img src={logo} className="h-12" />
