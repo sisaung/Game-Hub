@@ -15,7 +15,6 @@ interface GameCardProps {
 }
 const GameCards = ({ game }: GameCardProps) => {
   const p = game.parent_platforms.map(({ platform }) => platform);
-  console.log(p);
 
   return (
     <div className="col-span-1">
