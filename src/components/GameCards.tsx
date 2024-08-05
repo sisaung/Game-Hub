@@ -1,4 +1,3 @@
-import { Game } from "./hooks/useGames";
 import {
   Card,
   CardContent,
@@ -9,6 +8,7 @@ import {
 import PlatformIconLists from "./PlatformIconLists";
 import CriticScore from "./CriticScore";
 import getCroppedImageUrl from "@/services/image-url";
+import { Game } from "@/hooks/useGames";
 
 interface GameCardProps {
   game: Game;

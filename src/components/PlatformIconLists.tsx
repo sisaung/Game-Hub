@@ -1,4 +1,3 @@
-import { Platform } from "./hooks/useGames";
 import {
   FaAndroid,
   FaApple,
@@ -10,6 +9,7 @@ import {
 import { MdPhoneIphone } from "react-icons/md";
 import { BsNintendoSwitch } from "react-icons/bs";
 import { BsGlobe } from "react-icons/bs";
+import { Platform } from "@/hooks/useGames";
 
 interface PlatFormIconsProps {
   platforms: Platform[];

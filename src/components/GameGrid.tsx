@@ -1,10 +1,9 @@
-import { error } from "console";
+import useGames from "@/hooks/useGames";
 import GameCards from "./GameCards";
-import useGames from "./hooks/useGames";
 import GameCardSkeleton from "./GameCardSkeleton";
 
 const GameGrid = () => {
-  const { errors, games, isLoading } = useGames();
+  const { errors, data, isLoading } = useGames();
   let length: number = 6;
   const skeletonArr = Array.from({ length }, (_, index) => index + 1);
 
@@ -19,7 +18,7 @@ const GameGrid = () => {
             ))}
           </>
         )}
-        {games.map((game) => (
+        {data.map((game) => (
           <GameCards key={game.id} game={game} />
         ))}
       </div>
