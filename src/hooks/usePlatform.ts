@@ -1,10 +1,6 @@
 import useData from "./useData";
+import { Platform } from "./useGames";
 
-export interface PlatformSelector {
-  id: number;
-  name: string;
-}
-
-const usePlatform = () => useData<PlatformSelector>("/platforms/lists/parents");
+const usePlatform = () => useData<Platform>("/platforms/lists/parents");
 
 export default usePlatform;

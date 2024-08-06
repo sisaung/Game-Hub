@@ -31,9 +31,11 @@ const PlatformIconLists = ({ platforms }: PlatFormIconsProps) => {
   return (
     <div className="flex items-center gap-2">
       {platforms.map((p) => (
-        <p key={p.name} className=" text-gray-700 dark:text-gray-400">
-          {iconMaps[p.slug as keyof typeof iconMaps]}
-        </p>
+        <>
+          <p key={p.name} className=" text-gray-700 dark:text-gray-400">
+            {iconMaps[p.slug as keyof typeof iconMaps]}
+          </p>
+        </>
       ))}
     </div>
   );

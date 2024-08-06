@@ -3,7 +3,7 @@ import getCroppedImageUrl from "@/services/image-url";
 import ClipLoader from "react-spinners/ClipLoader";
 
 interface Props {
-  onSelectGenre: (genre: Genre) => void;
+  onSelectGenre: (genre: Genre | null) => void;
   selectedGenre: Genre | null;
 }
 
