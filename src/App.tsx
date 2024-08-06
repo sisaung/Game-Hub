@@ -5,10 +5,12 @@ import Navbar from "./components/Navbar";
 import { Genre } from "./hooks/useGenres";
 import PlatformSelector from "./components/PlatformSelector";
 import { Platform } from "./hooks/useGames";
+import SortSelector from "./components/SortSelector";
 
 export interface GameQuery {
   genre: Genre | null;
   platform: Platform | null;
+  order: string;
 }
 
 const App = () => {
@@ -27,12 +29,19 @@ const App = () => {
           />
         </div>
         <div className="flex flex-col gap-3">
-          <PlatformSelector
-            onSelectPlatforms={(platform) =>
-              setGameQuery({ ...gameQuery, platform })
-            }
-            selectedPlatform={gameQuery.platform}
-          />
+          <div className="flex md:flex-row flex-col gap-5 ">
+            <PlatformSelector
+              onSelectPlatforms={(platform) =>
+                setGameQuery({ ...gameQuery, platform })
+              }
+              selectedPlatform={gameQuery.platform}
+            />
+
+            <SortSelector
+              onSortOrder={(order) => setGameQuery({ ...gameQuery, order })}
+              sortOrder={gameQuery.order}
+            />
+          </div>
 
           <GameGrid gameQuery={gameQuery} />
         </div>
