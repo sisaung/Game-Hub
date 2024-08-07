@@ -9,6 +9,7 @@ import PlatformIconLists from "./PlatformIconLists";
 import CriticScore from "./CriticScore";
 import getCroppedImageUrl from "@/services/image-url";
 import { Game } from "@/hooks/useGames";
+import EmojiByRating from "./EmojiByRating";
 
 interface GameCardProps {
   game: Game;
@@ -38,6 +39,7 @@ const GameCards = ({ game }: GameCardProps) => {
             />
             <CriticScore score={game.metacritic} />
           </div>
+          <EmojiByRating rating={game.rating_top} />
         </CardContent>
 
         {/* <CardFooter>
