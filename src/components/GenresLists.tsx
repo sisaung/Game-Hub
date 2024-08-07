@@ -23,15 +23,17 @@ const GenresLists = ({ onSelectGenre, selectedGenre }: Props) => {
       )}
       {errors && <p> {errors} </p>}
 
+      <h1 className="text-2xl font-bold mb-3 font-serif"> Genres </h1>
+
       {data.map((genre) => (
         <div key={genre.id} className="flex items-center gap-3">
           <img
             src={getCroppedImageUrl(genre.image_background)}
-            className="h-10 w-12 my-1 rounded-lg "
+            className="h-10 w-10 my-1 rounded-lg object-cover"
           />
           <button
             onClick={() => onSelectGenre(genre)}
-            className={`text-sm xl:text-lg text-nowrap hover:underline ${
+            className={`text-lg text-left hover:underline ${
               selectedGenre?.id === genre.id && "font-bold text-purple-400"
             } `}
           >

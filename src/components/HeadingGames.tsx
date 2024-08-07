@@ -11,7 +11,9 @@ const HeadingGames = ({ gameQuery }: Props) => {
 
   return (
     <div>
-      <h1 className="font-bold text-3xl mb-5"> {heading} </h1>
+      <h1 className="font-bold text-5xl my-5 px-3 lg:p-0 font-serif ">
+        {heading}
+      </h1>
     </div>
   );
 };
