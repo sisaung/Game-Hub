@@ -10,6 +10,8 @@ interface Props {
 const GenresLists = ({ onSelectGenre, selectedGenre }: Props) => {
   const { data, isLoading, errors } = useGenres();
 
+  if (errors) return null;
+
   return (
     <div>
       {isLoading && (
@@ -21,7 +23,6 @@ const GenresLists = ({ onSelectGenre, selectedGenre }: Props) => {
           data-testid="loader"
         />
       )}
-      {errors && <p> {errors} </p>}
 
       <h1 className="text-2xl font-bold mb-3 font-serif"> Genres </h1>
 
