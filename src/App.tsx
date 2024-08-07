@@ -11,6 +11,7 @@ export interface GameQuery {
   genre: Genre | null;
   platform: Platform | null;
   order: string;
+  searchText: string;
 }
 
 const App = () => {
@@ -19,7 +20,9 @@ const App = () => {
   return (
     <div className="flex flex-col min-h-screen p-0 lg:p-5 gap-5 ">
       {/* <Test /> */}
-      <Navbar />
+      <Navbar
+        onSearch={(searchText) => setGameQuery({ ...gameQuery, searchText })}
+      />
 
       <div className="flex ">
         <div className="hidden lg:w-1/3 lg:flex">
