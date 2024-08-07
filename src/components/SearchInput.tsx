@@ -10,7 +10,10 @@ const SearchInput = ({ onSearch }: SearchInputProps) => {
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    if (inputRef.current) onSearch(inputRef.current.value);
+    if (inputRef.current) {
+      onSearch(inputRef.current.value);
+      inputRef.current.value = "";
+    }
   };
 
   return (

@@ -1,4 +1,4 @@
-import Mesh from "../assets/mesh.webp";
+import Mesh from "../assets/meh.webp";
 import Thumbsup from "../assets/thumbsup.png";
 import Bullseye from "../assets/bullseye.png";
 

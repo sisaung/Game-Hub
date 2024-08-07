@@ -24,7 +24,7 @@ const GenresLists = ({ onSelectGenre, selectedGenre }: Props) => {
         />
       )}
 
-      <h1 className="text-2xl font-bold mb-3 font-serif"> Genres </h1>
+      <h1 className="text-2xl font-bold my-7 font-serif"> Genres </h1>
 
       {data.map((genre) => (
         <div key={genre.id} className="flex items-center gap-3">
