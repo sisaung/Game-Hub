@@ -6,6 +6,7 @@ import { Genre } from "./hooks/useGenres";
 import PlatformSelector from "./components/PlatformSelector";
 import { Platform } from "./hooks/useGames";
 import SortSelector from "./components/SortSelector";
+import HeadingGames from "./components/HeadingGames";
 
 export interface GameQuery {
   genre: Genre | null;
@@ -32,6 +33,7 @@ const App = () => {
           />
         </div>
         <div className="flex flex-col gap-3">
+          <HeadingGames gameQuery={gameQuery} />
           <div className="flex md:flex-row flex-col gap-5 ">
             <PlatformSelector
               onSelectPlatforms={(platform) =>
