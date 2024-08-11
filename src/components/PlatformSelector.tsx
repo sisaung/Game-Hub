@@ -8,7 +8,6 @@ import {
 import { IoIosArrowDown } from "react-icons/io";
 import { Platform } from "@/hooks/useGames";
 import usePlatform from "@/hooks/usePlatform";
-import { useState } from "react";
 
 interface PlatformSelectorProps {
   onSelectPlatforms: (platform: Platform | null) => void;
@@ -20,7 +19,6 @@ const PlatformSelector = ({
   selectedPlatform,
 }: PlatformSelectorProps) => {
   const { data, errors } = usePlatform();
-  const [menuDown, setMenuDown] = useState(false);
 
   if (errors) return null;
 
@@ -28,16 +26,9 @@ const PlatformSelector = ({
     <div className="px-3 lg:p-0">
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button
-            onClick={() => setMenuDown(!menuDown)}
-            className="w-[180px] bg-gray-400 dark:bg-gray-800 flex justify-between"
-          >
+          <Button className="w-[180px] bg-gray-400 dark:bg-gray-800 flex justify-between">
             <span>{selectedPlatform?.name || "Platforms"}</span>
-            {menuDown ? (
-              <IoIosArrowDown className="rotate-180" />
-            ) : (
-              <IoIosArrowDown />
-            )}
+            <IoIosArrowDown />
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start" className="w-[180px]">
