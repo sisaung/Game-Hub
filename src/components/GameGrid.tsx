@@ -1,4 +1,4 @@
-import useGames, { Platform } from "@/hooks/useGames";
+import useGames from "@/hooks/useGames";
 import GameCards from "./GameCards";
 import GameCardSkeleton from "./GameCardSkeleton";
 import { GameQuery } from "@/App";
@@ -13,9 +13,9 @@ const GameGrid = ({ gameQuery }: Props) => {
   const skeletonArr = Array.from({ length }, (_, index) => index + 1);
 
   return (
-    <div className=" w-full">
+    <div className="w-full ">
       {errors && <p> {errors} </p>}
-      <div className="grid grid-cols-1 p-3 lg:p-0 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3  gap-3">
+      <div className="grid grid-cols-1 gap-3 p-3 lg:p-0 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
         {isLoading && (
           <>
             {skeletonArr.map((_, index) => (

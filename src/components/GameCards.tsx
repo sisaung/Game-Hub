@@ -1,10 +1,4 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import PlatformIconLists from "./PlatformIconLists";
 import CriticScore from "./CriticScore";
 import getCroppedImageUrl from "@/services/image-url";
@@ -15,8 +9,6 @@ interface GameCardProps {
   game: Game;
 }
 const GameCards = ({ game }: GameCardProps) => {
-  const p = game.parent_platforms.map(({ platform }) => platform);
-
   return (
     <div className="col-span-1">
       <Card className="flex flex-col overflow-hidden ">
@@ -24,16 +16,13 @@ const GameCards = ({ game }: GameCardProps) => {
           <CardTitle className="w-full p-0 overflow-hidden">
             <img src={getCroppedImageUrl(game.background_image)} />
           </CardTitle>
-          <CardDescription>
-            {/* <img src={game.background_image} /> */}
-          </CardDescription>
         </CardHeader>
-        <CardContent className="mt-auto my-2 space-y-4">
-          <p className="text-xl text-gray-700 dark:text-gray-300 text-nowrap font-bold">
+        <CardContent className="my-2 mt-auto space-y-4">
+          <p className="text-xl font-bold text-gray-700 dark:text-gray-300 text-nowrap">
             {game.name}
           </p>
 
-          <div className="flex justify-between items-center">
+          <div className="flex items-center justify-between">
             <PlatformIconLists
               platforms={game.parent_platforms.map(({ platform }) => platform)}
             />
@@ -41,10 +30,6 @@ const GameCards = ({ game }: GameCardProps) => {
           </div>
           <EmojiByRating rating={game.rating_top} />
         </CardContent>
-
-        {/* <CardFooter>
-          <p>Card Footer</p>
-        </CardFooter> */}
       </Card>
     </div>
   );
